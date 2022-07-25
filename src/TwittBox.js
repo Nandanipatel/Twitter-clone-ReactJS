@@ -14,35 +14,35 @@ function TwittBox() {
     db.collection('posts').add({
       displayName: "Nandani__",
       userName: "nandani_",
-      verified:true,
+      verified: true,
       text: twittMessege,
       avatar: './Images/user.jpg',
       image: twittImage,
     });
-    
+
     setTwittImage("");
     setTwittMessege("");
   }
-    return (
-      <div className='tweetBox'>
-        <form>
-          <div className='tweetBox-input'>
-            <Avatar alt="Nandani Patel" src="images/user.jpg" />
-            <input
-              onChange={(e) => setTwittMessege(e.target.value)}
-              value={twittMessege}
-              placeholder="What's Happening !!" type="text" />
-          </div>
+  return (
+    <div className='tweetBox'>
+      <form>
+        <div className='tweetBox-input'>
+          <Avatar alt="Nandani Patel" src="./Images/user.jpg" />
           <input
-            onChange={(e) => setTwittImage(e.target.value)}
-            value={twittImage}
-            className='tweetbox-inputImg'
-            placeholder=" Optional: Enter image URL here..."
-            type="text" />
-          <Button onClick={setTwitt} variant="contained" className='feed-tweet-btn'>Tweet</Button>
-        </form>
-      </div>
-    )
-  }
+            onChange={(e) => setTwittMessege(e.target.value)}
+            value={twittMessege}
+            placeholder="What's Happening !!" type="text" />
+        </div>
+        <input
+          onChange={(e) => setTwittImage(e.target.value)}
+          value={twittImage}
+          className='tweetbox-inputImg'
+          placeholder=" Optional: Enter image URL here..."
+          type="text" />
+        <Button onClick={setTwitt} variant="contained" className='feed-tweet-btn'>Tweet</Button>
+      </form>
+    </div>
+  )
+}
 
-  export default TwittBox
+export default TwittBox
